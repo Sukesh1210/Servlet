@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/sum")
-public class MyServlet3 extends HttpServlet {
-	@Override
+public class Sum1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		int num1=Integer.parseInt(req.getParameter("num1"));
@@ -20,6 +22,7 @@ public class MyServlet3 extends HttpServlet {
 		
 		resp.setContentType("text/html");
 		PrintWriter writer = resp.getWriter();
+		System.out.println("Sum of "+num1+" and "+num2+"="+sum);
 		writer.println("<h1> Sum of "+num1+" and "+num2+" = "+sum+"</h1>");
 		
 		
